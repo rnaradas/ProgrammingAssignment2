@@ -5,8 +5,8 @@
 
 makeCacheMatrix <- function(x = matrix()) {
   inver <- NULL
-  set <- function(y){
-    x<<-y
+  set <- function(a){
+    x<<-a
     inver <- NULL
   }
   get <- function() x
@@ -27,8 +27,8 @@ cacheSolve <- function(x, ...) {
                 message("getting cached data")
                 return(inver)
         }
-        mat <- x$get()
-        inver <- solve(mat, ...)
+        matrix <- x$get()
+        inver <- solve(matrix, ...)
         x$setInverse(inver)
         inver
 }
